@@ -1,0 +1,35 @@
+/* 
+    This file contains the styling for the registerHeader component.
+*/
+.header {
+    width: 100%;
+    height: 130px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 50px;
+    background-color: white;
+    color: #8692A6;
+}
+
+.register-individual-form {
+    width: 50%;
+    height: 700px;
+    background-color: white;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.header-back-button {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    cursor: pointer;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.header-back-button:hover {
+    text-decoration: underline;
+}

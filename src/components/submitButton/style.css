@@ -1,0 +1,84 @@
+/* 
+ This file contains the styles for the submit button component.
+ */
+
+.submit-button {
+    width: 90%;
+    height: 40px;
+    background-color: #1565D8;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+.submit-button:hover {
+    transform: scale(1.01);
+}
+
+.google-submit-btn {
+    width: 90%;
+    height: 40px;
+    background-color: white;
+    border: none;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 10px 20px;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    align-items: center;
+
+}
+
+.google-submit-btn:hover {
+    transform: scale(1.01);
+}
+
+.submit-button p {
+    color: white !important;
+    font-weight: 500;
+    font-size: 14px;
+    margin: 0px !important;
+}
+
+.google-submit-btn p {
+    color: black;
+    font-weight: 500;
+    margin: 0px;
+    font-size: 14px;
+}
+
+
+/* Add media queries for responsiveness */
+
+
+/* For Large Screen */
+
+@media (max-width: 1100px) {
+    
+    .google-submit-btn p {
+        color: black;
+        font-weight: 500;
+        margin: 0px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 800px) {
+    
+    .google-submit-btn {
+    
+        gap: 10px;
+      
+    
+    }
+  
+}

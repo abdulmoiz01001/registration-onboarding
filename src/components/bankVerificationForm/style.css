@@ -1,0 +1,128 @@
+/* 
+  CSS styles for BankVerificationForm component 
+*/
+.bankverification-form-main-body {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: gainsboro;
+}
+
+.bankverification-form {
+    width: 40%;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: white;
+}
+
+.bankverification-form-field-btns {
+    width: 70%;
+    margin-top: 50px;
+    padding: 0px 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.bankverification-form-field-btns p {
+    font-size: 12px;
+    color: #8c8c8c;
+    margin-bottom: 10px;
+
+}
+
+.bankverification-form-text-field {
+    width: 90%;
+    height: 120px;
+    position: relative;
+    display: flex;
+    /* border: 2px solid red; */
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.bankverification-form-text-field label {
+    /* position: absolute; */
+    font-size: 13px;
+    color: #8c8c8c;
+    margin-bottom: 5px;
+
+}
+
+.bankverification-form-text-field input {
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    top: 30px;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 0px 10px;
+    margin-bottom: 10px;
+    font-size: 12px;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.bankverification-form-text-field input:focus {
+    outline: none;
+    border: 1px solid #08AD36;
+}
+
+.bankverification-form-field-btns button {
+    width: 100%;
+    background: none;
+    border: none;
+}
+
+.color-alignment {
+    color: #08AD36;
+    text-align: end;
+    position: absolute;
+    top: 38px;
+    right: 10px;
+}
+
+
+
+/* Add media queries for responsiveness */
+
+
+/* For Large Screen */
+
+@media (max-width: 1100px) {
+
+    .bankverification-form-field-btns {
+        width: 90%;
+        margin-top: 50px;
+        padding: 0px 10px;
+    }
+}
+
+/* For Medium Screen */
+
+@media (max-width:800px) {
+    .bankverification-form-main-body {
+        flex-direction: column;
+    }
+
+    .bankverification-form {
+        width: 80%;
+        height: 100%;
+    }
+}
+
+/* For Small Screen */
+
+@media (max-width:500px) {
+    .bankverification-form {
+        width: 100%;
+
+    }
+}
