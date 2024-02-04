@@ -90,8 +90,10 @@ const RegisterIndividual = () => {
           <div className='register-individual-check-box'>
             <input type="checkbox" /> <p>I agree to terms & conditions</p>
           </div>
-          <button type="submit">
-            disabled={isPending} // disable the input field when the form is pending
+          <button type="submit"
+               disabled={isPending} // disable the input field when the form is pending
+            >
+         
             <Button      
             title={Register} />
           </button>
