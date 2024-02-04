@@ -2,6 +2,7 @@
 // IMporting Hooks
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { useTransition } from "react";
 // Importing Styles
 import './style.css';
 // Importing Components
@@ -25,6 +26,7 @@ const ResidencyInfoForm = () => {
   
   const title = "Save & continue"  // Dynamic Varibles for the Components
   const [defaultCountryCode, setDefaultCountryCode] = useState('+91'); // State for default country code
+    const [isPending, startTransition] = useTransition(); // useTransition for smooth transition
   const [countryName, setCountryName] = useState('🇮🇳');  // State for country name
 
   const router = useRouter();  // Make instance of useRouter
@@ -53,6 +55,7 @@ const ResidencyInfoForm = () => {
 
 
   const ValidateFields = (e) => {   // Function for validating form values
+    startTransition(()=>{
     e.preventDefault();
     console.log(form)
 
@@ -65,6 +68,7 @@ const ResidencyInfoForm = () => {
 
     router.push('/register/bankverification');
     return;
+    })
   }
 
   //JSX
@@ -83,6 +87,7 @@ const ResidencyInfoForm = () => {
             <label htmlFor="country">Phone number</label>
             <span className='phone-labels'><span>{defaultCountryCode ? defaultCountryCode : "+91"}</span> <span>{countryName}</span> <Image src={DownArrow} alt='image' /></span>
             <input
+            disabled={isPending} // disable the input field when the form is pending
             required 
             type='text'
             value={phone}
@@ -95,6 +100,7 @@ const ResidencyInfoForm = () => {
           <div className='residency-form-text-field'>
             <label htmlFor="address">Your address</label>
             <input
+            disabled={isPending} // disable the input field when the form is pending
             required
             value={address}
             onChange={(e) => { setForm({ ...form, address: e.currentTarget.value }) }}
@@ -104,6 +110,7 @@ const ResidencyInfoForm = () => {
           <div className='residency-form-text-field'>
             <label htmlFor="country">Country of residency</label>
             <select
+            disabled={isPending} // disable the input field when the form is pending
             required
             value={country}
             onChange={(e) => { setForm({ ...form, country: e.currentTarget.value }) }}
@@ -116,6 +123,7 @@ const ResidencyInfoForm = () => {
           </div>
 
           <button type='submit' >
+            disabled={isPending} // disable the input field when the form is pending
             <Button
             title={title} />
           </button>
