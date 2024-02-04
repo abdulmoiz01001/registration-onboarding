@@ -2,6 +2,8 @@
 // Importing Modules
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { useTransition } from "react";
+// Importing Styles
 import './style.css'
 // Importing Components
 import RegistrationSideBar from '../reuseableComp/registrationSideBar/RegisterSideBarComp';
@@ -19,6 +21,8 @@ import toast from 'react-hot-toast';
 const BankVerificationForm = () => {
 
   const router = useRouter();  // make a instance of useRouter
+
+  const [isPending, startTransition] = useTransition(); // useTransition for smooth transition
 
   const [verificationCode, setVerificationCode] = useState(''); // state for verification code
 
@@ -55,6 +59,7 @@ const BankVerificationForm = () => {
           <div className='bankverification-form-text-field'>
             <label htmlFor="bankverification">Bank Verification Number (BVN)</label>
             <input
+            disabled={isPending} // disable the input field when the form is pending
             required
             value={verificationCode}
             onChange={(e) => { setVerificationCode(e.currentTarget.value) }}
