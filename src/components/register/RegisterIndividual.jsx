@@ -2,6 +2,7 @@
 // Importing Hooks
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { useTransition } from "react";
 // Importing Styles
 import './style.css';
 // Importing Components
@@ -19,6 +20,7 @@ const RegisterIndividual = () => {
 
   const route = useRouter();               // Make instance of useRouter
   const [showPassword, setshowPassword] = useState(false); // State for showing password
+  const [isPending, startTransition] = useTransition(); // useTransition for smooth transition
   const [form, setForm] = useState({             // State for form values 
     name: '',
     email: '',
@@ -36,6 +38,7 @@ const RegisterIndividual = () => {
   }
 
   const validateValues = (e) => {            // Function for validating form values
+    startTransition(()=>{
     e.preventDefault();
     console.log(form);
     const isValidate = RegisterSchema.safeParse(form);
@@ -44,7 +47,7 @@ const RegisterIndividual = () => {
       return toast.error("Invalid Input Fields");
 
     }
-
+    })
     route.push('/register/residency');
   }
 
@@ -61,6 +64,7 @@ const RegisterIndividual = () => {
           <div className='register-individual-text-field'>
             <label htmlFor="name">Your fullname*</label>
             <input
+              disabled={isPending} // disable the input field when the form is pending            
               value={name}
               onChange={(e) => { setForm({ ...form, name: e.target.value }) }}
               type="text" id='name' placeholder='Invictus Innocent' />
@@ -68,6 +72,7 @@ const RegisterIndividual = () => {
           <div className='register-individual-text-field'>
             <label htmlFor="email">Email address*</label>
             <input
+              disabled={isPending} // disable the input field when the form is pending             
               value={email}
               onChange={(e) => { setForm({ ...form, email: e.target.value }) }}
               type="email" id='email' placeholder='Enter email address' />
@@ -75,6 +80,7 @@ const RegisterIndividual = () => {
           <div className='register-individual-text-field'>
             <label htmlFor="password">Create Password*</label>
             <input 
+              disabled={isPending} // disable the input field when the form is pending           
               className='password-input'
               value={password}
               onChange={(e) => { setForm({ ...form, password: e.target.value }) }}
@@ -85,14 +91,15 @@ const RegisterIndividual = () => {
             <input type="checkbox" /> <p>I agree to terms & conditions</p>
           </div>
           <button type="submit">
-
-            <Button 
+            disabled={isPending} // disable the input field when the form is pending
+            <Button      
             title={Register} />
           </button>
 
           <div className='line'><div className='line1'></div><span>or</span><div className='line2'></div></div>
 
           <Button
+          disabled={isPending} // disable the input field when the form is pending
           image={Google} title={GoogleRegister} />
 
         </form>
