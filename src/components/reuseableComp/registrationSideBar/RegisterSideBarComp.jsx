@@ -19,10 +19,10 @@ const RegistrationSideBar = () => {
       <div className='join-us-opacity-layer'>
         <div className="icon"><Image src={union} alt="no image" /><span className='join-us-heading'>Oasis</span></div>
         <div className="join-us-paragraph">
-          <Image src={quot} />
+          <Image src={quot} alt="qout" />
           <p>The passage experienced a surge in popularity during the 1960s when Letraset used it on their dry-transfer sheets, and again during the 90s as desktop publishers bundled the text with their software.</p>
           <div className='join-us-align-center' >  <p>Vincent Obi </p><span><CheckCircleIcon className='color' /></span></div>
-          <div className='join-us-vector' ><Image src={vector} /></div>
+          <div className='join-us-vector' ><Image src={vector} alt="vector" /></div>
 
         </div>
       </div>
