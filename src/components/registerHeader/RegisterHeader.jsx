@@ -20,7 +20,7 @@ const RegisterHeader = ({ title }) => {
 
   return (
     <div className='header'>
-      <div onClick={handleBack} className='header-back-button'><Image src={arrow} /><p>Back</p></div>
+      <div onClick={handleBack} className='header-back-button'><Image src={arrow} alt="arrow" /><p>Back</p></div>
       <p>{title}</p>
     </div>
   );
