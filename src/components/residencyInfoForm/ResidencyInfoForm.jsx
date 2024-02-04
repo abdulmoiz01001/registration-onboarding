@@ -122,8 +122,10 @@ const ResidencyInfoForm = () => {
             </select>
           </div>
 
-          <button type='submit' >
-            disabled={isPending} // disable the input field when the form is pending
+          <button type='submit'
+             disabled={isPending} // disable the input field when the form is pending
+            >
+           
             <Button
             title={title} />
           </button>
