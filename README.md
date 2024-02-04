@@ -1,8 +1,8 @@
 
 # Next.js Registration Onboarding Design.
-[![Join us on Slack](https://img.shields.io/badge/slack-chat-green.svg?logo=slack)](https://join.slack.com/t/ngc-goz8665/shared_invite/zt-r01kumfq-dQUT3c95BxEP_fnk4yJFfQ)
 
-![Oasis](https://github.com/abdulmoiz01001/registration-onboarding/blob/InnoByte/src/assets/Union.png)
+
+![Oasis](https://github.com/abdulmoiz01001/registration-onboarding/blob/InnoByte/src/assets/Union.png) Oasis
 
 
 ## This is a Internship Task for InnoByte Based on Registration Onboarding Design.
