@@ -9,7 +9,7 @@ const SubmitButton = ({ image, title }) => {  // Destructuring props
 
   return (
     <div className={image ? 'google-submit-btn' : 'submit-button'} >
-      {image && (<Image src={image} />)}
+      {image && (<Image src={image} alt="image" />)}
       <p>{title}</p>
 
     </div>
