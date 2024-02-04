@@ -47,9 +47,9 @@ const RegisterIndividual = () => {
       return toast.error("Invalid Input Fields");
 
     }
-    })
     route.push('/register/residency');
-  }
+     })
+    }
 
   //JSX
 
