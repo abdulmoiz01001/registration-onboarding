@@ -2,7 +2,6 @@
 // IMporting Hooks
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { useTransition } from "react";
 // Importing Styles
 import './style.css';
 // Importing Components
@@ -25,7 +24,6 @@ import toast from 'react-hot-toast';
 const ResidencyInfoForm = () => {
   
   const title = "Save & continue"  // Dynamic Varibles for the Components
-  const [isPending, startTransition] = useTransition(); // useTransition for smooth transition
   const [defaultCountryCode, setDefaultCountryCode] = useState('+91'); // State for default country code
   const [countryName, setCountryName] = useState('🇮🇳');  // State for country name
 
@@ -85,7 +83,6 @@ const ResidencyInfoForm = () => {
             <label htmlFor="country">Phone number</label>
             <span className='phone-labels'><span>{defaultCountryCode ? defaultCountryCode : "+91"}</span> <span>{countryName}</span> <Image src={DownArrow} alt='image' /></span>
             <input
-            disabled={isPending} // disable the input field when the form is pending
             required 
             type='text'
             value={phone}
@@ -98,7 +95,6 @@ const ResidencyInfoForm = () => {
           <div className='residency-form-text-field'>
             <label htmlFor="address">Your address</label>
             <input
-            disabled={isPending} // disable the input field when the form is pending
             required
             value={address}
             onChange={(e) => { setForm({ ...form, address: e.currentTarget.value }) }}
@@ -108,7 +104,6 @@ const ResidencyInfoForm = () => {
           <div className='residency-form-text-field'>
             <label htmlFor="country">Country of residency</label>
             <select
-            disabled={isPending} // disable the input field when the form is pending
             required
             value={country}
             onChange={(e) => { setForm({ ...form, country: e.currentTarget.value }) }}
@@ -122,7 +117,6 @@ const ResidencyInfoForm = () => {
 
           <button type='submit' >
             <Button
-            disabled={isPending} // disable the input field when the form is pending
             title={title} />
           </button>
 
